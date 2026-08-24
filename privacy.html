@@ -5,26 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MultiPost Privacy Policy</title>
   <style>
-    body { font-family: Segoe UI, sans-serif; max-width: 720px; margin: 48px auto; padding: 0 20px; color: #111; line-height: 1.5; }
-    a { color: #0b57d0; }
+    :root { color-scheme: light dark; }
+    body { font-family: Segoe UI, system-ui, sans-serif; max-width: 780px; margin: 48px auto; padding: 0 22px; line-height: 1.62; }
+    h1, h2 { line-height: 1.2; }
+    a { color: #6f65ff; }
+    code { padding: 2px 5px; border-radius: 4px; background: rgba(127,127,127,.15); }
+    .note { padding: 14px 16px; border-left: 4px solid #6f65ff; background: rgba(127,127,127,.1); }
   </style>
 </head>
 <body>
   <h1>MultiPost Privacy Policy</h1>
-  <p>Last updated: 22 August 2026</p>
-  <p>MultiPost is a Windows desktop application. This policy explains what data the app handles.</p>
-  <h2>Data we store on your computer</h2>
-  <p>Login tokens, captions, job history, and settings are stored locally in your Windows user profile (<code>%APPDATA%\MultiPost</code>). They are not uploaded to a MultiPost server. MultiPost does not operate a cloud backend for posting.</p>
-  <h2>TikTok and other networks</h2>
-  <p>When you click Log in, MultiPost opens the official TikTok (or other network) sign-in page. After you approve, TikTok returns access tokens so the app can publish videos you choose. We request <code>user.info.basic</code>, <code>video.upload</code>, and <code>video.publish</code> for TikTok. We do not read your TikTok followers, messages, or For You feed.</p>
-  <h2>Videos</h2>
-  <p>Videos stay on your disk until you publish. Then they are sent only to the networks you selected (for example TikTok Content Posting API).</p>
-  <h2>Optional AI rewrite</h2>
-  <p>If you paste an AI API key in Settings, titles and captions you ask to rewrite are sent to that provider. Leave the key empty to keep rewrites local.</p>
-  <h2>Sharing</h2>
-  <p>We do not sell your data. We do not share tokens with third parties except the social network you logged into, as required to publish.</p>
+  <p><strong>Last updated:</strong> 24 August 2026</p>
+  <p>MultiPost is a local-first Windows desktop application that helps its user prepare and publish selected videos to connected social-media accounts. This policy explains the data the application handles and the choices available to its user.</p>
+
+  <h2>Data stored on your computer</h2>
+  <p>MultiPost stores account connection tokens, encrypted application credentials, captions, drafts, publishing history, settings, generated cover frames, and platform-ready video copies in your Windows user profile under <code>%APPDATA%\MultiPost</code>. MultiPost does not operate a central database or cloud account service.</p>
+
+  <h2>Connected social networks</h2>
+  <p>When you connect a platform, MultiPost opens that platform's official authorization page. The platform returns access and, where applicable, refresh tokens that let MultiPost perform only the actions you approve. The application uses these tokens to identify the connected account, prepare publishing requests, upload media selected by you, check processing status, and publish or schedule content at your direction.</p>
+  <p>Depending on the platforms you connect, data is transmitted to Meta services (Facebook, Instagram, and Threads), TikTok, Google/YouTube, LinkedIn, and X under their respective privacy policies and terms.</p>
+
+  <h2>Videos and temporary hosting</h2>
+  <p>Your original videos remain on your computer. When you publish, MultiPost sends a platform-optimized copy to each network you selected.</p>
+  <p class="note">Instagram or Threads may require Meta's servers to fetch the video from a public HTTPS address. If direct upload is unavailable, MultiPost uploads a temporary public copy to the MultiPost GitHub Pages media location. That copy can be accessed by anyone who knows its URL and may remain in GitHub history. Do not use this fallback for confidential media.</p>
+
+  <h2>Optional AI caption rewriting</h2>
+  <p>If you configure an external AI API key and request an AI rewrite, the title, caption, call to action, platform name, and related prompt text are sent to the AI provider and are handled under that provider's policy. If no external key is configured, MultiPost uses its local caption optimizer.</p>
+
+  <h2>Sharing and sale of data</h2>
+  <p>MultiPost does not sell personal data and does not use it for advertising. Data is shared only with the services required for the action you request, such as authentication, media hosting, AI rewriting, and publishing to the selected network.</p>
+
+  <h2>Retention and deletion</h2>
+  <p>You can disconnect a platform from the MultiPost <strong>Platforms &amp; dashboards</strong> screen to remove the locally stored access and refresh tokens for that platform. You may also revoke MultiPost from the connected platform's Apps and Websites or business-integration settings.</p>
+  <p>To delete all local MultiPost data, close the application and remove the <code>%APPDATA%\MultiPost</code> folder. This removes local tokens, drafts, settings, history, generated covers, and prepared media. Content already published to a social network must be deleted from that network. Temporary GitHub-hosted media can be replaced or removed from the project repository, although copies may remain in Git history and caches.</p>
+
+  <h2>Security</h2>
+  <p>MultiPost encrypts sensitive locally stored values using Windows-provided protection tied to the Windows user account. No method of storage or transmission is guaranteed to be completely secure.</p>
+
+  <h2>Children</h2>
+  <p>MultiPost is not directed to children under 13 and does not knowingly collect children's personal information.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>This policy may be updated when MultiPost's features or connected services change. The latest version and effective date will remain available on this page.</p>
+
   <h2>Contact</h2>
-  <p>Questions: the email on your TikTok for Developers account.</p>
+  <p>Privacy questions and deletion requests can be submitted through the <a href="https://github.com/ovtom22/multipost-desktop/issues">MultiPost project issue tracker</a>.</p>
   <p><a href="index.html">Home</a> · <a href="terms.html">Terms of Service</a></p>
 </body>
 </html>
