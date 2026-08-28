@@ -1,0 +1,25 @@
+:root {
+  --bg: #0a0d14;
+  --card: #121722;
+  --line: #2a3348;
+  --text: #f4f6fb;
+  --muted: #9aa6bb;
+  --accent: #7c5cfc;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", system-ui, sans-serif; line-height: 1.55; }
+a { color: #9d8cff; }
+header, main, footer { max-width: 860px; margin: 0 auto; padding: 0 22px; }
+header { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 800; font-size: 20px; letter-spacing: 0.3px; color: #fff; text-decoration: none; }
+nav a { margin-left: 16px; text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; }
+nav a:hover { color: #fff; }
+h1 { font-size: 38px; line-height: 1.15; margin: 36px 0 12px; }
+h2 { font-size: 22px; margin-top: 28px; }
+.lead { color: var(--muted); font-size: 18px; max-width: 640px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 30px; } }
+.muted { color: var(--muted); }
+footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 22px; color: var(--muted); font-size: 14px; }
+code { background: #1a2130; padding: 1px 6px; border-radius: 6px; }
