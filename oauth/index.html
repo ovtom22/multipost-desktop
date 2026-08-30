@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>MultiPost — finishing sign-in</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    background: #101418; color: #e8eef4;
+    font: 16px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif;
+    padding: 24px;
+  }
+  main { max-width: 460px; text-align: center; }
+  h1 { font-size: 22px; margin: 0 0 8px; letter-spacing: .3px; }
+  p { margin: 8px 0; color: #b7c4d1; }
+  a.button {
+    display: inline-block; margin-top: 16px; padding: 11px 20px;
+    background: #2f6fed; color: #fff; text-decoration: none;
+    border-radius: 8px; font-weight: 600;
+  }
+  a.button:hover { background: #4680f5; }
+  .fail { color: #ff8f8f; }
+  .hint { font-size: 14px; color: #8797a6; margin-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>MultiPost</h1>
+  <p id="status">Finishing sign-in…</p>
+  <a id="manual" class="button" href="#" hidden>Return to MultiPost</a>
+  <p class="hint" id="hint" hidden>
+    If nothing happens, make sure MultiPost is still open and waiting for the
+    sign-in, then use the button above.
+  </p>
+</main>
+<script>
+(function () {
+  // Meta refuses localhost callbacks once an app is Live, so this page is the
+  // registered redirect URI. It hands the authorization code straight to the
+  // listener MultiPost runs on the loopback address. Nothing is stored or sent
+  // anywhere else: the code never leaves the visitor's machine from here.
+  var query = window.location.search || "";
+  if (!query && window.location.hash.length > 1) {
+    query = "?" + window.location.hash.slice(1);
+  }
+
+  var params = new URLSearchParams(query);
+  var statusEl = document.getElementById("status");
+  var manualEl = document.getElementById("manual");
+  var hintEl = document.getElementById("hint");
+
+  if (params.get("error")) {
+    statusEl.className = "fail";
+    statusEl.textContent =
+      params.get("error_description") ||
+      params.get("error_message") ||
+      "The network refused the sign-in.";
+    document.getElementById("hint").hidden = false;
+    hintEl.textContent = "Close this tab and try Log in again from MultiPost.";
+    return;
+  }
+
+  if (!params.get("code")) {
+    statusEl.className = "fail";
+    statusEl.textContent = "This page is only used while signing in to MultiPost.";
+    return;
+  }
+
+  // 127.0.0.1 over plain http: browsers treat the loopback address as a
+  // trustworthy origin, so this avoids a self-signed certificate warning.
+  var target = "http://127.0.0.1:8765/callback" + query;
+  manualEl.href = target;
+  manualEl.hidden = false;
+  hintEl.hidden = false;
+
+  window.setTimeout(function () {
+    window.location.replace(target);
+  }, 150);
+})();
+</script>
+</body>
+</html>
