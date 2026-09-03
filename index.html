@@ -4,47 +4,63 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MultiPost Desktop</title>
-  <meta name="description" content="MultiPost Desktop is a Windows app that publishes one video to TikTok and other networks from your PC.">
+  <meta name="application-name" content="MultiPost Desktop">
+  <meta name="description" content="MultiPost Desktop is the official Windows application for MultiPost Desktop. Review one video, then publish to TikTok and other networks from your PC.">
+  <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <a class="brand" href="index.html">MultiPost Desktop</a>
+    <a class="brand" href="index.html"><img src="icon.png" alt="">MultiPost Desktop</a>
     <nav>
-      <a href="privacy_policy/">Privacy Policy</a>
-      <a href="terms_of_service/">Terms of Service</a>
+      <a href="features.html">Features</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="download.html">Download</a>
+      <a href="support.html">Support</a>
+      <a href="privacy-policy/">Privacy Policy</a>
+      <a href="terms-of-service/">Terms of Service</a>
     </nav>
   </header>
   <main>
     <h1>MultiPost Desktop</h1>
     <p class="lead">MultiPost Desktop is the official Windows application for MultiPost Desktop. You choose one video on your computer, review the caption for each network, then publish or schedule from this PC.</p>
+    <p><a class="button" href="download.html">Download MultiPost Desktop</a></p>
 
     <div class="card">
       <h2>What MultiPost Desktop does</h2>
       <p>MultiPost Desktop is a local-first desktop product. It is not a mobile app and it does not post from a MultiPost cloud server. You stay in control: nothing is published until you click Post now or Schedule.</p>
       <div class="grid">
         <div class="card">
-          <strong>TikTok</strong>
+          <h3>TikTok</h3>
           <p class="muted">Sign in with official TikTok Login Kit. Publish with the Content Posting API using scopes you approve (<code>user.info.basic</code>, <code>video.upload</code>, <code>video.publish</code>).</p>
         </div>
         <div class="card">
-          <strong>Other destinations</strong>
+          <h3>Other destinations</h3>
           <p class="muted">Optional publishing to YouTube, Instagram, Facebook Page, Threads, X, LinkedIn, and Pinterest with each network’s official login.</p>
         </div>
         <div class="card">
-          <strong>Review before posting</strong>
+          <h3>Review before posting</h3>
           <p class="muted">Per-network titles, captions, cover frames, and optional subtitles. You can optimize copy for each destination before send.</p>
         </div>
         <div class="card">
-          <strong>Data on this PC</strong>
+          <h3>Data on this PC</h3>
           <p class="muted">Tokens, drafts, and job history stay in your Windows profile. MultiPost Desktop does not operate a posting backend.</p>
         </div>
       </div>
     </div>
 
     <h2>How TikTok login works</h2>
-    <p>When you click Log in with TikTok, MultiPost Desktop opens TikTok’s official sign-in page in your browser. After you approve the app, TikTok returns access tokens to the desktop app on <code>http://127.0.0.1:8765/callback</code>. MultiPost Desktop then uploads only the video you selected, using TikTok’s Content Posting API.</p>
+    <p>When you click Log in with TikTok, MultiPost Desktop opens TikTok’s official sign-in page in your browser. After you approve the app, TikTok returns the authorization code to this official MultiPost Desktop website, which hands it back to the app running on your PC. MultiPost Desktop then uploads only the video you selected, using TikTok’s Content Posting API.</p>
     <p>We do not scrape TikTok, we do not use unofficial cookies, and we do not read your For You feed, followers, DMs, or other users’ content.</p>
+
+    <h2>Services on this website</h2>
+    <p>This is the official MultiPost Desktop website. It hosts product information, download instructions, support, the <a href="privacy-policy/">Privacy Policy</a>, the <a href="terms-of-service/">Terms of Service</a>, and the OAuth return page used when you sign in from the Windows app.</p>
+    <div class="grid">
+      <div class="card"><h3><a href="features.html">Features</a></h3><p class="muted">What MultiPost Desktop can publish and how review works.</p></div>
+      <div class="card"><h3><a href="how-it-works.html">How it works</a></h3><p class="muted">From picking a video to posting on TikTok.</p></div>
+      <div class="card"><h3><a href="download.html">Download</a></h3><p class="muted">Install MultiPost Desktop on Windows 10 or 11.</p></div>
+      <div class="card"><h3><a href="support.html">Support</a></h3><p class="muted">Sign-in help, scheduled posts, and contact.</p></div>
+    </div>
 
     <h2>Until production audit</h2>
     <p>While TikTok reviews MultiPost Desktop for production, Direct Post may be limited to <strong>Only you / SELF_ONLY</strong>, as required by TikTok. After the app is approved, public posting follows TikTok’s audit result.</p>
@@ -62,7 +78,7 @@
     <p class="muted">Official website: <a href="https://ovtom22.github.io/multipost-desktop/">https://ovtom22.github.io/multipost-desktop/</a></p>
   </main>
   <footer>
-    MultiPost Desktop · <a href="privacy_policy/">Privacy Policy</a> · <a href="terms_of_service/">Terms of Service</a>
+    MultiPost Desktop · <a href="features.html">Features</a> · <a href="how-it-works.html">How it works</a> · <a href="download.html">Download</a> · <a href="support.html">Support</a> · <a href="privacy-policy/">Privacy Policy</a> · <a href="terms-of-service/">Terms of Service</a>
   </footer>
 </body>
 </html>
