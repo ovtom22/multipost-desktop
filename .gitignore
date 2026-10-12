@@ -1,0 +1,5 @@
+# Local design exploration retained outside the deployable site source.
+commercial-preview/
+
+# Python checker cache.
+__pycache__/

@@ -1,50 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MultiPost Desktop</title>
-  <meta name="application-name" content="MultiPost Desktop">
-  <link rel="icon" href="icon.png" type="image/png">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="How MultiPost organizes media preparation, per-platform review, account context, and publishing outcomes.">
+  <title>Workflow | MultiPost</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a class="brand" href="index.html"><img src="icon.png" alt="">MultiPost Desktop</a>
-    <nav>
-      <a href="features.html">Features</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="download.html">Download</a>
-      <a href="support.html">Support</a>
-      <a href="privacy-policy/">Privacy Policy</a>
-      <a href="terms-of-service/">Terms of Service</a>
-    </nav>
-  </header>
-  <main>
-    <h1>MultiPost Desktop</h1>
-    <p class="lead">Features of the MultiPost Desktop Windows application.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page"><div class="shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="MultiPost home"><span class="brand-mark" aria-hidden="true">MP</span>MultiPost</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Product</a><a aria-current="page" href="features.html">Workflow</a><a href="how-it-works.html">TikTok review</a><a href="support.html">Support</a><a class="nav-cta" href="download.html">Availability</a>
+      </nav>
+    </header>
 
-    <h2>TikTok publishing</h2>
-    <p>MultiPost Desktop uses TikTok Login Kit and the Content Posting API. You approve <code>user.info.basic</code>, <code>video.upload</code>, and <code>video.publish</code>. The app uploads the video you picked and the caption you reviewed. It does not read your For You feed, followers, or messages.</p>
+    <main id="main">
+      <section class="page-hero">
+        <p class="eyebrow">THE MULTIPOST WORKSPACE</p>
+        <h1>Preparation has a place.<br>So does the final decision.</h1>
+        <p class="lede">The intended workflow starts from creator-selected media. It makes the account, destination, and post state visible without presenting a completed upload as automatically public.</p>
+      </section>
 
-    <h2>Other networks</h2>
-    <p>The same video can also go to YouTube, Instagram, Facebook Page, Threads, X, LinkedIn, and Pinterest. Each destination uses that network’s official login. You can turn any destination off before you post.</p>
+      <section class="content-grid" aria-label="Workflow features">
+        <article class="content-card"><p class="eyebrow">01 / MEDIA</p><h2>Source-aware preparation</h2><p>Start from a local file you control. The desktop app can prepare supported platform variants and a selected cover image while preserving the link to the source chosen for this post.</p></article>
+        <article class="content-card"><p class="eyebrow">02 / COPY</p><h2>Captions that stay reviewable</h2><p>Begin with a master description, then review the platform version before it is sent. Assisted rewriting is a suggestion. It never replaces the creator's decision to publish.</p></article>
+        <article class="content-card"><p class="eyebrow">03 / ACCOUNTS</p><h2>Destination context stays visible</h2><p>Connected accounts authorize through their platform pages. The review surface is designed to show which destination and account will receive the selected content.</p></article>
+        <article class="content-card"><p class="eyebrow">04 / ACTIVITY</p><h2>States with a next action</h2><p>The activity queue distinguishes review needed, scheduled locally, media preparation, platform processing, confirmed posting, and attention-needed outcomes.</p></article>
+      </section>
 
-    <h2>Review tools</h2>
-    <ul>
-      <li>One master title and description, then a per-network caption</li>
-      <li>Optional AI rewrite that keeps YouTube chapter timestamps only on YouTube</li>
-      <li>Cover frame picker for networks that need a still image</li>
-      <li>Optional subtitle file (.srt / .vtt) for YouTube and Facebook Pages</li>
-      <li>Queue, history, and a local scheduler while MultiPost Desktop is running</li>
-    </ul>
+      <section class="block two-col" aria-labelledby="traffic-title">
+        <div>
+          <p class="eyebrow">TRAFFIC ROUTING</p>
+          <h2 id="traffic-title">Choose one post as the destination.</h2>
+          <p class="lede">In the current desktop source, YouTube can be selected as a primary traffic destination. It is published first. When YouTube returns its video URL, compatible secondary posts receive that URL before their upload starts.</p>
+          <p>If the primary YouTube post fails or does not return a usable URL, MultiPost stops the dependent posts instead of publishing a misleading call to action. A failed secondary can keep the resolved URL for a retry without re-uploading the primary video.</p>
+        </div>
+        <div class="content-card">
+          <h3>Platform-specific behavior stays visible</h3>
+          <ul>
+            <li>Pinterest receives the YouTube URL as the Pin click destination.</li>
+            <li>Other compatible captions receive the returned URL within their platform limit.</li>
+            <li>Instagram may display an external URL as plain text rather than a tappable link.</li>
+            <li>TikTok receives an editable, reviewed YouTube discovery line before consent. Its caption is not modified after consent.</li>
+          </ul>
+        </div>
+      </section>
 
-    <h2>What MultiPost Desktop does not do</h2>
-    <p>It does not scrape any network. It does not post from a cloud server while your PC is off. It does not sell data or show ads. Tokens stay in your Windows profile under <code>%APPDATA%\MultiPost</code>.</p>
-    <p><a class="button" href="how-it-works.html">See how it works</a></p>
-  </main>
-  <footer>
-    MultiPost Desktop · <a href="index.html">Home</a> · <a href="privacy-policy/">Privacy Policy</a> · <a href="terms-of-service/">Terms of Service</a>
-  </footer>
+      <section class="block two-col" aria-labelledby="batch-title">
+        <div>
+          <p class="eyebrow">BATCH HELP, INDIVIDUAL CONTROL</p>
+          <h2 id="batch-title">Do the repetitive work together. Approve each destination yourself.</h2>
+          <p class="lede">Batch preparation reduces repeated copy work, but the final values still belong to the destination row. The creator can edit, omit, or stop any row before publish.</p>
+        </div>
+        <div class="content-card">
+          <h3>Review row checklist</h3>
+          <ul>
+            <li>Selected account and intended destination</li>
+            <li>Caption, hashtags, title, or board where supported</li>
+            <li>Cover choice where the platform accepts one</li>
+            <li>Format or length warning before transfer</li>
+            <li>Audience, disclosures, and consent for TikTok</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="queue-title">
+        <div class="section-heading"><div><p class="eyebrow">ACTIVITY THAT EXPLAINS ITSELF</p><h2 id="queue-title">One label is not enough.</h2></div><p>A queue becomes useful when a creator can see whether a job needs review, is waiting for a chosen time, is still processing on a platform, or is actually complete.</p></div>
+        <div class="feature-grid">
+          <article class="feature"><span class="feature-number">REVIEW NEEDED</span><h3>Something changed or needs consent.</h3><p>Return to the selected row to confirm the details. Nothing is silently sent because a caption, file, account, or platform requirement changed.</p></article>
+          <article class="feature"><span class="feature-number">PROCESSING</span><h3>The platform still owns the next step.</h3><p>The upload was accepted, but the platform has not yet confirmed a final outcome. A new upload should not be the first response.</p></article>
+          <article class="feature"><span class="feature-number">ACTION NEEDED</span><h3>The problem stays attached to its destination.</h3><p>Errors are shown against the relevant account and platform, so one failure does not make the rest of the publishing result unreadable.</p></article>
+        </div>
+      </section>
+
+      <section class="block notice">
+        <div><p class="eyebrow">SCOPE, NOT A PROMISE</p><h2>Platform availability is verified per release.</h2><p>Connected platform support depends on the released desktop build, each platform's terms, app permissions, account eligibility, and service availability. The product does not promise reach, visibility, or uninterrupted third-party APIs.</p></div>
+        <a class="button secondary" href="support.html">Read common questions</a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">MP</span>MultiPost</a><p>Windows creator publishing workspace. Platform names belong to their respective owners. No endorsement or approval is implied.</p></div><div class="footer-links"><a href="index.html">Product</a><a href="how-it-works.html">TikTok review</a><a href="support.html">Support</a><a href="privacy-policy/">Privacy</a><a href="terms-of-service/">Terms</a></div></footer>
+  </div></div>
 </body>
 </html>

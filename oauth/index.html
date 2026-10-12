@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>MultiPost — finishing sign-in</title>
+<title>MultiPost legacy sign-in return</title>
 <style>
   :root { color-scheme: dark; }
   body {
@@ -28,20 +28,21 @@
 </head>
 <body>
 <main>
-  <h1>MultiPost</h1>
-  <p id="status">Finishing sign-in…</p>
+  <h1>Legacy MultiPost sign-in return</h1>
+  <p id="status">Finishing legacy sign-in…</p>
   <a id="manual" class="button" href="#" hidden>Return to MultiPost</a>
   <p class="hint" id="hint" hidden>
-    If nothing happens, make sure MultiPost is still open and waiting for the
-    sign-in, then use the button above.
+    This page is only for a legacy personal developer build. It is not used by
+    the commercial MultiPost release. If you did not start this legacy sign-in,
+    close this tab.
   </p>
+  <p class="hint">Commercial MultiPost uses a separate HTTPS authorization broker and returns a short-lived ticket to the local app.</p>
 </main>
 <script>
 (function () {
-  // Meta refuses localhost callbacks once an app is Live, so this page is the
-  // registered redirect URI. It hands the authorization code straight to the
-  // listener MultiPost runs on the loopback address. Nothing is stored or sent
-  // anywhere else: the code never leaves the visitor's machine from here.
+  // This compatibility page exists only for the personal developer runtime.
+  // It forwards the authorization response to the legacy loopback listener.
+  // The commercial runtime uses a separate HTTPS authorization broker instead.
   var query = window.location.search || "";
   if (!query && window.location.hash.length > 1) {
     query = "?" + window.location.hash.slice(1);
@@ -59,13 +60,13 @@
       params.get("error_message") ||
       "The network refused the sign-in.";
     document.getElementById("hint").hidden = false;
-    hintEl.textContent = "Close this tab and try Log in again from MultiPost.";
+    hintEl.textContent = "Close this tab and try the legacy personal sign-in again from MultiPost.";
     return;
   }
 
   if (!params.get("code")) {
     statusEl.className = "fail";
-    statusEl.textContent = "This page is only used while signing in to MultiPost.";
+    statusEl.textContent = "This page is only used while completing legacy personal sign-in to MultiPost.";
     return;
   }
 

@@ -1,57 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MultiPost Desktop</title>
-  <meta name="application-name" content="MultiPost Desktop">
-  <link rel="icon" href="../icon.png" type="image/png">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Privacy notice for the MultiPost Windows application and associated product services.">
+  <title>Privacy notice | MultiPost</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <header>
-    <a class="brand" href="../index.html"><img src="../icon.png" alt="">MultiPost Desktop</a>
-    <nav>
-      <a href="../features.html">Features</a>
-      <a href="../how-it-works.html">How it works</a>
-      <a href="../download.html">Download</a>
-      <a href="../support.html">Support</a>
-      <a href="../privacy-policy/">Privacy Policy</a>
-      <a href="../terms-of-service/">Terms of Service</a>
-    </nav>
-  </header>
-  <main>
-    <h1>MultiPost Desktop</h1>
-    <p class="muted">Privacy Policy · Last updated: 3 September 2026</p>
-    <p>This Privacy Policy applies to the MultiPost Desktop Windows application and this official website. MultiPost Desktop is a local-first Windows desktop application that helps its user prepare and publish selected videos to connected social-media accounts.</p>
-    <h2>Data stored on your computer</h2>
-    <p>MultiPost Desktop stores account connection tokens, encrypted application credentials, captions, drafts, publishing history, settings, generated cover frames, and platform-ready video copies in your Windows user profile under <code>%APPDATA%\MultiPost</code>. MultiPost Desktop does not operate a central database or cloud account service.</p>
-    <h2>Connected social networks</h2>
-    <p>When you connect a platform, MultiPost Desktop opens that platform's official authorization page. The platform returns access and, where applicable, refresh tokens that let MultiPost Desktop perform only the actions you approve. The application uses these tokens to identify the connected account, prepare publishing requests, upload media selected by you, check processing status, and publish or schedule content at your direction.</p>
-    <p>Depending on the platforms you connect, data is transmitted to Meta services (Facebook, Instagram, and Threads), TikTok, Google/YouTube, LinkedIn, X, and Pinterest under their respective privacy policies and terms.</p>
-    <h2>TikTok</h2>
-    <p>When you click Log in, MultiPost Desktop opens the official TikTok sign-in page. After you approve, TikTok returns an authorization code to this official MultiPost Desktop website. The page forwards that code to the MultiPost Desktop app on your computer so it can publish videos you choose. We request <code>user.info.basic</code>, <code>video.upload</code>, and <code>video.publish</code>. We do not read your TikTok followers, messages, or For You feed.</p>
-    <h2>Videos and temporary hosting</h2>
-    <p>Your original videos remain on your computer. When you publish, MultiPost Desktop sends a platform-optimized copy to each network you selected.</p>
-    <p>Instagram or Threads may require Meta's servers to fetch the video from a public HTTPS address. If direct upload is unavailable, MultiPost Desktop uploads a temporary public copy to the MultiPost Desktop GitHub Pages media location. That copy can be accessed by anyone who knows its URL and may remain in GitHub history. Do not use this fallback for confidential media.</p>
-    <h2>Optional AI caption rewriting</h2>
-    <p>If you configure an external AI API key and request an AI rewrite, the title, caption, call to action, platform name, and related prompt text are sent to the AI provider and are handled under that provider's policy. If no external key is configured, MultiPost Desktop uses its local caption optimizer.</p>
-    <h2>Sharing and sale of data</h2>
-    <p>MultiPost Desktop does not sell personal data and does not use it for advertising. Data is shared only with the services required for the action you request, such as authentication, media hosting, AI rewriting, and publishing to the selected network.</p>
-    <h2>Retention and deletion</h2>
-    <p>You can disconnect a platform from the MultiPost Desktop Platforms dashboards screen to remove the locally stored access and refresh tokens for that platform. You may also revoke MultiPost Desktop from the connected platform's Apps and Websites or business-integration settings.</p>
-    <p>To delete all local MultiPost Desktop data, close the application and remove the <code>%APPDATA%\MultiPost</code> folder. This removes local tokens, drafts, settings, history, generated covers, and prepared media. Content already published to a social network must be deleted from that network.</p>
-    <h2>Security</h2>
-    <p>MultiPost Desktop encrypts sensitive locally stored values using Windows-provided protection tied to the Windows user account. No method of storage or transmission is guaranteed to be completely secure.</p>
-    <h2>Children</h2>
-    <p>MultiPost Desktop is not directed to children under 13 and does not knowingly collect children's personal information.</p>
-    <h2>Changes to this policy</h2>
-    <p>This policy may be updated when MultiPost Desktop's features or connected services change. The latest version and effective date will remain available on this page.</p>
-    <h2>Contact</h2>
-    <p><a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a> · Official website: <a href="https://ovtom22.github.io/multipost-desktop/">https://ovtom22.github.io/multipost-desktop/</a></p>
-  </main>
-  <footer>
-    MultiPost Desktop · <a href="../index.html">Home</a> · <a href="../terms-of-service/">Terms of Service</a>
-  </footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page"><div class="shell">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="MultiPost home"><span class="brand-mark" aria-hidden="true">MP</span>MultiPost</a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Product</a><a href="../features.html">Workflow</a><a href="../how-it-works.html">TikTok review</a><a href="../support.html">Support</a><a class="nav-cta" href="../download.html">Availability</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <p class="eyebrow">PRE-RELEASE PRIVACY NOTICE</p>
+        <h1>Privacy should follow the actual data path.</h1>
+        <p class="lede">Last revised: 12 October 2026. TIGO is the identified operator for this pre-release notice, which describes the current MultiPost source architecture. It must be updated with final service providers, locations, retention schedule, legal basis, and jurisdiction before public release or platform submission.</p>
+      </section>
+
+      <article class="legal">
+        <div class="callout"><strong>Release boundary:</strong> the current site is a local source preview. MultiPost is not yet publicly distributed, and this notice is not presented as a completed commercial legal review.</div>
+        <div class="callout"><strong>Personal-build boundary:</strong> this candidate notice describes the planned commercial runtime. A separate legacy personal developer build can use public temporary media hosts, including GitHub Pages or Litterbox, in specific non-production fallback paths. Those legacy paths are excluded from the commercial runtime, must not be used for confidential media, and must not be represented as the commercial service.</div>
+
+        <h2>1. Scope and contact</h2>
+        <p>This notice covers the MultiPost Windows application, this product website, and any product-owned HTTPS services deployed for its connected-platform flow. The identified project operator is TIGO. Questions about this current project can be sent to TIGO at <a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a>. Before public release, the legal seller identity, privacy contact, legal basis, and applicable jurisdiction must be confirmed on this page.</p>
+
+        <h2>2. Information used by the application</h2>
+        <p>Depending on what the creator chooses to do, MultiPost can use:</p>
+        <ul>
+          <li>Connected-account display information and identifiers supplied by an authorized platform.</li>
+          <li>Access credentials or refresh credentials supplied after the creator authorizes a connected platform.</li>
+          <li>Selected local media, file metadata, prepared delivery variants, cover selections, captions, titles, schedules, and publishing results.</li>
+          <li>TikTok-specific review values such as the currently available audience choices, interaction settings, disclosures, and recorded posting consent.</li>
+          <li>Local app settings, local job history, and diagnostic information supplied voluntarily to support.</li>
+          <li>For a future commercial release, a device identifier and limited product-session or entitlement data used to control access to the paid product service.</li>
+        </ul>
+
+        <h2>3. How information is used</h2>
+        <p>MultiPost uses this information to connect the account selected by the creator, prepare and review content, make the platform request the creator approves, track the result of that request, operate local scheduling, maintain product access when a commercial release exists, and respond to support requests.</p>
+        <p>MultiPost does not use connected-account data to sell advertising, build an audience profile for advertising, or sell personal data.</p>
+
+        <h2>4. Local storage and account controls</h2>
+        <p>The desktop application stores working data in the Windows user profile, including drafts, captions, schedules, history, and connection material needed for the creator's authorized workflow. The creator can disconnect an account through the app and can remove all local app data after closing the app by removing the MultiPost application data folder from the Windows user profile. Content already posted to a third-party platform must be managed on that platform.</p>
+
+        <h2>5. Connected platforms and other processors</h2>
+        <p>When the creator connects or publishes to a platform, the selected content and relevant post settings are sent to that platform under the creator's direction. The current commercial scope is being prepared for TikTok, Meta services such as Facebook Pages, Instagram professional accounts and Threads, and Pinterest. The final public notice will identify every released integration and the applicable provider policies.</p>
+        <p>If the creator configures an optional AI writing service, the title, caption, prompt text, platform context, and other text needed for that request can be sent to that service. The creator should not submit sensitive information to an optional AI service.</p>
+        <p>The separate legacy personal developer build can upload eligible media to GitHub Pages or Litterbox as a temporary public-fetch fallback when a destination requires a public URL. That fallback is not part of the planned commercial runtime. Do not use it for confidential media.</p>
+
+        <h2>6. Commercial service architecture</h2>
+        <p>The commercial source design uses a product-owned HTTPS authorization broker so that provider application secrets are not placed in the distributed Windows application. The broker is intended to receive an authorization response from a connected platform and deliver a short-lived result to the local app. It is not a social-posting dashboard or a public account database.</p>
+        <p>Some platforms can require a video to be available from a URL they can fetch. For those cases, the commercial design uses a controlled temporary media relay. It is intended to hold an expiring copy only for the necessary platform transfer window, rather than use a permanent public media library. A product-session issuer is intended to authorize that relay for an eligible product installation.</p>
+        <p>The services are not deployed in this local source stage. Before go-live, this notice must name the actual hosting providers, storage location, log retention period, media expiry and deletion behavior, security contact, and the process for any cross-border transfer.</p>
+
+        <h2>7. Sharing and retention</h2>
+        <p>In the planned commercial runtime, information is shared only with the connected platform, an optional AI service selected by the creator, or the product service needed to perform the requested action. The separate legacy personal build can also share eligible media with GitHub Pages or Litterbox in the temporary public-fetch fallback described above. Retention is currently governed by the creator's local application data until it is disconnected or deleted. No commercial server-side retention schedule is asserted until production infrastructure is configured and reviewed.</p>
+
+        <h2>8. Website technologies</h2>
+        <p>The current static site source contains no analytics script, advertising script, payment form, visitor account registration, or embedded tracking widget. If these are added for a public release, this notice and any required consent mechanism must be updated before they are used.</p>
+
+        <h2>9. Security</h2>
+        <p>MultiPost is designed to limit credential exposure by using official platform authorization flows and by keeping provider application secrets outside the distributed commercial desktop build. No storage or transmission method can be guaranteed completely secure. Creators should keep their Windows account and connected-platform account protected.</p>
+
+        <h2>10. Children, rights, and changes</h2>
+        <p>MultiPost is not directed to children. Before public release, this notice must be completed with the applicable privacy-rights process, deletion-request contact, response periods, and legal basis. The current date at the top of this page will be updated whenever the notice changes.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer"><div><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">MP</span>MultiPost</a><p>Windows creator publishing workspace. Platform names belong to their respective owners. No endorsement or approval is implied.</p></div><div class="footer-links"><a href="../features.html">Workflow</a><a href="../how-it-works.html">TikTok review</a><a href="../support.html">Support</a><a href="../terms-of-service/">Terms</a></div></footer>
+  </div></div>
 </body>
 </html>
