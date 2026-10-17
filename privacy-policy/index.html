@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Privacy notice for the MultiPost Windows application and associated product services.">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Privacy notice for the MultiPost Windows application, including its Google and YouTube upload connection.">
   <title>Privacy notice | MultiPost</title>
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -20,57 +20,55 @@
 
     <main id="main">
       <section class="page-hero">
-        <p class="eyebrow">PRE-RELEASE PRIVACY NOTICE</p>
-        <h1>Privacy should follow the actual data path.</h1>
-        <p class="lede">Last revised: 12 October 2026. TIGO is the identified operator for this pre-release notice, which describes the current MultiPost source architecture. It must be updated with final service providers, locations, retention schedule, legal basis, and jurisdiction before public release or platform submission.</p>
+        <p class="eyebrow">PRIVACY NOTICE</p>
+        <h1>How MultiPost handles connected-platform data.</h1>
+        <p class="lede">Effective date: 18 October 2026. TIGO operates the MultiPost product website and Windows application. This notice explains the data handling for this website and for a supported connection, including the Google and YouTube upload connection.</p>
       </section>
 
       <article class="legal">
-        <div class="callout"><strong>Release boundary:</strong> the current site is a local source preview. MultiPost is not yet publicly distributed, and this notice is not presented as a completed commercial legal review.</div>
-        <div class="callout"><strong>Personal-build boundary:</strong> this candidate notice describes the planned commercial runtime. A separate legacy personal developer build can use public temporary media hosts, including GitHub Pages or Litterbox, in specific non-production fallback paths. Those legacy paths are excluded from the commercial runtime, must not be used for confidential media, and must not be represented as the commercial service.</div>
+        <div class="callout"><strong>Contact:</strong> for privacy questions, local-data deletion help, or a request concerning support correspondence, email TIGO at <a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a>.</div>
 
-        <h2>1. Scope and contact</h2>
-        <p>This notice covers the MultiPost Windows application, this product website, and any product-owned HTTPS services deployed for its connected-platform flow. The identified project operator is TIGO. Questions about this current project can be sent to TIGO at <a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a>. Before public release, the legal seller identity, privacy contact, legal basis, and applicable jurisdiction must be confirmed on this page.</p>
+        <h2>1. Scope</h2>
+        <p>This notice applies to MultiPost, its product website, and the data handled by a released or testing build when a creator uses a supported platform connection. Platform availability can differ by build, account eligibility, provider approval, and the creator's selected destination. This notice does not replace the privacy terms of Google, YouTube, or another connected platform.</p>
 
-        <h2>2. Information used by the application</h2>
-        <p>Depending on what the creator chooses to do, MultiPost can use:</p>
+        <h2>2. Information MultiPost handles</h2>
+        <p>Depending on the features a creator uses, MultiPost can handle the following information:</p>
         <ul>
-          <li>Connected-account display information and identifiers supplied by an authorized platform.</li>
-          <li>Access credentials or refresh credentials supplied after the creator authorizes a connected platform.</li>
-          <li>Selected local media, file metadata, prepared delivery variants, cover selections, captions, titles, schedules, and publishing results.</li>
-          <li>TikTok-specific review values such as the currently available audience choices, interaction settings, disclosures, and recorded posting consent.</li>
-          <li>Local app settings, local job history, and diagnostic information supplied voluntarily to support.</li>
-          <li>For a future commercial release, a device identifier and limited product-session or entitlement data used to control access to the paid product service.</li>
+          <li>Selected media file paths, file metadata, prepared local delivery variants, cover selections, titles, descriptions, captions, scheduling choices, and publishing settings.</li>
+          <li>Connected-account display names, platform identifiers, connection status, publishing timestamps, remote post or video identifiers, and platform response messages.</li>
+          <li>Access and refresh credentials returned after the creator completes a supported authorization flow.</li>
+          <li>Local app preferences, drafts, job history, and operational log messages.</li>
+          <li>The sender's email address and message content when the sender contacts TIGO by email.</li>
         </ul>
 
-        <h2>3. How information is used</h2>
-        <p>MultiPost uses this information to connect the account selected by the creator, prepare and review content, make the platform request the creator approves, track the result of that request, operate local scheduling, maintain product access when a commercial release exists, and respond to support requests.</p>
-        <p>MultiPost does not use connected-account data to sell advertising, build an audience profile for advertising, or sell personal data.</p>
+        <h2>3. Google and YouTube data</h2>
+        <p>When the YouTube connection is available in a MultiPost build and the creator chooses to connect it, MultiPost opens the Google authorization page in the system browser. The creator signs in directly with Google and chooses whether to grant the requested access. MultiPost does not ask for or receive the creator's Google password.</p>
+        <p>The YouTube connection requests these Google OAuth scopes:</p>
+        <ul>
+          <li><code>https://www.googleapis.com/auth/youtube.upload</code>, used to upload the creator-selected video and, where selected, its thumbnail.</li>
+          <li><code>https://www.googleapis.com/auth/youtube.force-ssl</code>, used because MultiPost can upload a creator-selected caption track.</li>
+        </ul>
+        <p>After authorization, MultiPost uses the returned credentials to identify the connected YouTube channel, upload the video chosen by the creator, upload the selected thumbnail, and upload a caption track when the creator selects one. The YouTube upload can include the video's title, description, privacy setting, and any selected captions. Google and YouTube process data sent to their services under their own terms and privacy policies.</p>
 
-        <h2>4. Local storage and account controls</h2>
-        <p>The desktop application stores working data in the Windows user profile, including drafts, captions, schedules, history, and connection material needed for the creator's authorized workflow. The creator can disconnect an account through the app and can remove all local app data after closing the app by removing the MultiPost application data folder from the Windows user profile. Content already posted to a third-party platform must be managed on that platform.</p>
+        <h2>4. Local storage and credential protection</h2>
+        <p>MultiPost stores its working records in the current Windows user's application-data folder, normally <code>%APPDATA%\MultiPost</code>. The app database keeps local drafts, job history, connected-account records, and the paths to selected files. The selected source video remains on the creator's computer unless the creator directs MultiPost to send it to a connected platform.</p>
+        <p>For the YouTube desktop OAuth connection, access and refresh credentials are stored in the local app database protected with Windows Data Protection API for the current Windows user. The YouTube authorization and token exchange use Google's services directly. The commercial YouTube flow does not send the creator's Google access or refresh credential through a TIGO authorization broker.</p>
 
-        <h2>5. Connected platforms and other processors</h2>
-        <p>When the creator connects or publishes to a platform, the selected content and relevant post settings are sent to that platform under the creator's direction. The current commercial scope is being prepared for TikTok, Meta services such as Facebook Pages, Instagram professional accounts and Threads, and Pinterest. The final public notice will identify every released integration and the applicable provider policies.</p>
-        <p>If the creator configures an optional AI writing service, the title, caption, prompt text, platform context, and other text needed for that request can be sent to that service. The creator should not submit sensitive information to an optional AI service.</p>
-        <p>The separate legacy personal developer build can upload eligible media to GitHub Pages or Litterbox as a temporary public-fetch fallback when a destination requires a public URL. That fallback is not part of the planned commercial runtime. Do not use it for confidential media.</p>
+        <h2>5. How information is used and shared</h2>
+        <p>MultiPost uses the data above to show the selected account, prepare and review a creator-selected post, make the platform request the creator approves, report the platform response, and provide support when contacted. MultiPost does not use YouTube API data to serve advertising or to build an advertising audience.</p>
+        <p>When the creator connects or publishes, the relevant information is sent to the selected platform under the creator's direction. For the YouTube connection, this can include Google authorization information and the video, thumbnail, captions, title, description, and publishing settings needed by YouTube. If the creator enables an optional AI writing feature, the text supplied for that feature can be sent to the provider selected for that request.</p>
+        <p>The current product website is static and does not include an analytics script, advertising script, payment form, or visitor-account registration.</p>
 
-        <h2>6. Commercial service architecture</h2>
-        <p>The commercial source design uses a product-owned HTTPS authorization broker so that provider application secrets are not placed in the distributed Windows application. The broker is intended to receive an authorization response from a connected platform and deliver a short-lived result to the local app. It is not a social-posting dashboard or a public account database.</p>
-        <p>Some platforms can require a video to be available from a URL they can fetch. For those cases, the commercial design uses a controlled temporary media relay. It is intended to hold an expiring copy only for the necessary platform transfer window, rather than use a permanent public media library. A product-session issuer is intended to authorize that relay for an eligible product installation.</p>
-        <p>The services are not deployed in this local source stage. Before go-live, this notice must name the actual hosting providers, storage location, log retention period, media expiry and deletion behavior, security contact, and the process for any cross-border transfer.</p>
+        <h2>6. Disconnecting, revocation, and deletion</h2>
+        <p>A creator can disconnect a YouTube account from MultiPost. For a YouTube OAuth connection, MultiPost first attempts to send a revocation request to Google and then clears the local sign-in record. If Google cannot confirm the revocation request, MultiPost still clears the local sign-in record and reports that condition to the creator.</p>
+        <p>To remove local MultiPost data, close the application and remove the <code>%APPDATA%\MultiPost</code> folder. This removes local drafts, history, settings, and stored connection records from that Windows user profile. It does not remove videos, channels, posts, or records held by YouTube or another platform. Those must be managed through the relevant platform account and its privacy controls.</p>
+        <p>To request deletion of support correspondence held by TIGO, email <a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a> from the address used to contact support and describe the request. TIGO does not state a separate server-side retention period for YouTube credentials because the YouTube connection described here stores them locally in the creator's Windows profile.</p>
 
-        <h2>7. Sharing and retention</h2>
-        <p>In the planned commercial runtime, information is shared only with the connected platform, an optional AI service selected by the creator, or the product service needed to perform the requested action. The separate legacy personal build can also share eligible media with GitHub Pages or Litterbox in the temporary public-fetch fallback described above. Retention is currently governed by the creator's local application data until it is disconnected or deleted. No commercial server-side retention schedule is asserted until production infrastructure is configured and reviewed.</p>
+        <h2>7. Security and account responsibility</h2>
+        <p>MultiPost is designed to use official provider authorization pages and to protect locally stored connection credentials with the current Windows user's profile protection. No storage or transmission method is completely secure. Creators should protect their Windows account and connected-platform accounts and should not send passwords, access tokens, developer credentials, or local database files to support.</p>
 
-        <h2>8. Website technologies</h2>
-        <p>The current static site source contains no analytics script, advertising script, payment form, visitor account registration, or embedded tracking widget. If these are added for a public release, this notice and any required consent mechanism must be updated before they are used.</p>
-
-        <h2>9. Security</h2>
-        <p>MultiPost is designed to limit credential exposure by using official platform authorization flows and by keeping provider application secrets outside the distributed commercial desktop build. No storage or transmission method can be guaranteed completely secure. Creators should keep their Windows account and connected-platform account protected.</p>
-
-        <h2>10. Children, rights, and changes</h2>
-        <p>MultiPost is not directed to children. Before public release, this notice must be completed with the applicable privacy-rights process, deletion-request contact, response periods, and legal basis. The current date at the top of this page will be updated whenever the notice changes.</p>
+        <h2>8. Google policies and changes</h2>
+        <p>Google's handling of data is governed by Google's own policies, including the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>. MultiPost may update this notice when the data flow or available features change. The effective date at the top of this page will be updated with the notice.</p>
       </article>
     </main>
 
