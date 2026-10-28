@@ -20,39 +20,49 @@
 
     <main id="main">
       <section class="page-hero">
-        <p class="eyebrow">WINDOWS RELEASE STATUS</p>
-        <h1>Verify the release before distributing it.</h1>
-        <p class="lede">No installer, payment form, free trial, or license purchase is offered from this local site source. Distribution remains blocked until the product and external requirements are complete.</p>
+        <p class="eyebrow">WINDOWS PACKAGE AVAILABILITY</p>
+        <h1>MultiPost for TikTok Sandbox review.</h1>
+        <p class="lede">A separate portable Windows x64 candidate is prepared for review. It uses TikTok Sandbox access and its own local profile. Reviewers can request a free copy through TIGO support. Delivery and permitted Sandbox account access must be confirmed before a reviewer can use it.</p>
       </section>
 
-      <section class="availability-grid" aria-label="Release readiness">
+      <section id="review-build" class="availability-grid" aria-label="TikTok reviewer candidate">
         <article class="content-card">
-          <p class="eyebrow">CURRENT SOURCE WORK</p>
-          <h2>Implemented in the local project</h2>
+          <p class="eyebrow">PORTABLE BUILD 0.1.0-review.20261026.3</p>
+          <h2>What the review package includes</h2>
           <ul class="readiness-list">
-            <li><span class="check">✓</span><span>Per-platform preparation and readable activity states in the desktop source.</span></li>
-            <li><span class="check">✓</span><span>Optional YouTube traffic routing that publishes the primary video first and stops dependent posts if no usable target URL is returned.</span></li>
-            <li><span class="check">✓</span><span>TikTok account-aware review, audience selection, and explicit consent flow in source.</span></li>
-            <li><span class="check">✓</span><span>Commercial OAuth broker, controlled media relay, and product-session issuer source prepared without shipping provider secrets.</span></li>
-            <li><span class="check">✓</span><span>Automated local regression checks for the relevant source modules.</span></li>
+            <li><span class="check">✓</span><span>TikTok-only connection through the HTTPS authorization service, with the developer secret held on the server.</span></li>
+            <li><span class="check">✓</span><span>A local video preview, editable caption, current creator information and account-specific duration limit.</span></li>
+            <li><span class="check">✓</span><span>Manual audience selection, optional interaction and disclosure controls, and consent before upload.</span></li>
+            <li><span class="check">✓</span><span>Bundled Python runtime, FFmpeg and FFprobe. No administrator installation or separate Python installation is required.</span></li>
+            <li><span class="check">✓</span><span>A separate review-data profile that does not import personal MultiPost accounts, drafts or history.</span></li>
           </ul>
         </article>
         <article class="content-card">
-          <p class="eyebrow">BEFORE A CUSTOMER RELEASE</p>
-          <h2>External gates remain</h2>
+          <p class="eyebrow">ACCESS AND REMAINING CHECKS</p>
+          <h2>Before reviewer handoff</h2>
           <ul class="readiness-list">
-            <li><span class="pending">○</span><span>Public HTTPS service hosts, DNS, TLS, and monitored production deployment.</span></li>
-            <li><span class="pending">○</span><span>Approved platform configuration, verified URLs, and external creator testing.</span></li>
-            <li><span class="pending">○</span><span>Signed installer, update path, rollback test, and release support process.</span></li>
-            <li><span class="pending">○</span><span>Seller identity, privacy/legal review, price, taxes, refund terms, and payment provider integration.</span></li>
+            <li><span class="pending">○</span><span>A working delivery route and an account permitted by the Sandbox target-user configuration.</span></li>
+            <li><span class="pending">○</span><span>Clarification of the portal's product-included capability and a review configuration matching the implemented Direct Post flow.</span></li>
+            <li><span class="pending">○</span><span>A creator-approved private test, its processing receipt and the final outcome.</span></li>
+            <li><span class="pending">○</span><span>The current end-to-end recording and alignment of product identity, policies and portal configuration.</span></li>
           </ul>
         </article>
       </section>
 
-      <section class="block callout"><strong>Release boundary:</strong> this status page is deliberately not a waitlist, checkout, or download promise. It records the difference between local source readiness and a released product.</section>
+      <section id="reviewer-access" class="block notice" aria-labelledby="reviewer-access-title">
+        <div><p class="eyebrow">FREE REVIEWER ACCESS</p><h2 id="reviewer-access-title">Request the Windows review package.</h2><p>Email <a href="mailto:ovtom22@gmail.com?subject=MultiPost%20TikTok%20reviewer%20access">ovtom22@gmail.com</a> with the subject <strong>MultiPost TikTok reviewer access</strong>. TIGO will coordinate the approved package, its SHA-256 checksum and permitted Sandbox account access. No payment or licence purchase is required for review. A public download link is not currently available.</p><p>Use your own TikTok sign-in on TikTok's official authorization page. Do not send a password, sign-in code, access token or developer credential to support.</p></div>
+        <a class="button secondary" href="mailto:ovtom22@gmail.com?subject=MultiPost%20TikTok%20reviewer%20access">Request free reviewer access</a>
+      </section>
+
+      <section class="block content-grid" aria-label="Package use and data">
+        <article class="content-card"><p class="eyebrow">OPEN THE COMPLETE PACKAGE</p><h2>Extract, then open MultiPost.exe.</h2><p>When an approved copy is supplied, extract the entire ZIP and keep the <code>_internal</code> folder beside <code>MultiPost.exe</code>. Verify the supplied SHA-256 before opening it. The portable candidate is separate from a signed customer installer.</p></article>
+        <article class="content-card"><p class="eyebrow">SANDBOX ACCOUNT ACCESS</p><h2>Use a permitted test creator.</h2><p>The package connects to the MultiPost TikTok Sandbox. A public TikTok account is not automatically allowed. Unaudited posting requires a private creator account and the manually selected <strong>Only you</strong> audience. The audience dropdown does not change account privacy.</p><p>Review-profile storage and deletion are explained in the <a href="privacy-policy/#local-storage">Privacy Notice</a>.</p></article>
+      </section>
+
+      <section class="block callout"><strong>Commercial availability:</strong> this candidate is separate from a commercial MultiPost release. No payment form, licence purchase or subscription is offered here. Customer distribution, updates and commercial terms remain separate release work.</section>
 
       <section class="block notice">
-        <div><p class="eyebrow">NO IMPLIED APPROVAL</p><h2>TikTok production approval remains a separate review.</h2><p>Until Direct Post is approved by TikTok, clients are limited by TikTok's unaudited behavior. A released product cannot claim approval before the platform has granted it and the released behavior matches the approved review evidence.</p></div>
+        <div><p class="eyebrow">CURRENT REVIEW STATUS</p><h2>TikTok review remains pending.</h2><p>Package integrity and connection checks do not establish a completed publishing test or platform approval. The private test, final demonstration and review submission have not been completed.</p></div>
         <a class="button secondary" href="how-it-works.html">Read the TikTok flow</a>
       </section>
     </main>

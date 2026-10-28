@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="The creator-controlled TikTok review flow planned for MultiPost.">
+  <meta name="description" content="The MultiPost TikTok Sandbox workflow, including creator settings, manual audience selection, consent and saved upload status.">
   <title>TikTok review | MultiPost</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -22,19 +22,19 @@
       <section class="page-hero">
         <p class="eyebrow">TIKTOK CONTENT POSTING FLOW</p>
         <h1>A creator reviews the post before the video leaves the computer.</h1>
-        <p class="lede">MultiPost is designed to support authentic creators publishing content they control. It does not present TikTok as an automatic destination for content copied from other networks.</p>
+        <p class="lede">The Windows review candidate lets creators prepare their own local video, inspect the destination account and settings, and explicitly approve the upload. The current package uses TikTok Sandbox access.</p>
       </section>
 
       <ol class="workflow" aria-label="TikTok review steps">
-        <li><div><h2>Connect the creator's own account</h2><p>Opening TikTok sign-in takes the creator to TikTok's official authorization experience. The desktop app then loads the current account information and post options allowed by TikTok for that account.</p></div></li>
+        <li><div><h2>Connect a permitted creator account</h2><p>Open TikTok's official sign-in page using an account allowed by the MultiPost Sandbox target-user configuration. Sign-in returns through TIGO's HTTPS authorization service; the developer secret stays on that server. The desktop then requests current creator information directly from TikTok.</p></div></li>
         <li><div><h2>Select original or rights-cleared content</h2><p>The creator chooses a video from the local computer and reviews it before upload. The available duration and media restrictions are checked against the current TikTok account settings.</p></div></li>
-        <li><div><h2>Choose the audience and disclosures explicitly</h2><p>The TikTok review shows the creator identity and the privacy choices returned by TikTok. No audience is preselected. Comment, Duet, and Stitch begin disabled and remain unavailable when TikTok does not allow them. Commercial or AI-content disclosures are selected when applicable.</p></div></li>
+        <li><div><h2>Choose the audience and disclosures explicitly</h2><p>The review shows the creator identity and the privacy choices returned by TikTok, with no audience preselected. Comment, Duet and Stitch begin unchecked; controls are unavailable when TikTok does not allow them. Commercial disclosure is off by default and requires a truthful brand choice when enabled. Select the AI-content label when applicable.</p></div></li>
         <li><div><h2>Confirm the reviewed post</h2><p>Before transfer, the creator reviews the selected account, video, caption, audience, settings, and platform terms, then gives explicit posting consent. Changing material details requires a fresh review.</p></div></li>
-        <li><div><h2>Check the saved receipt before trying again</h2><p>After TikTok receives an upload, processing can continue. The activity queue can check the saved upload receipt without creating another upload. A successful upload is not represented as a public post until TikTok reports the relevant outcome.</p></div></li>
+        <li><div><h2>Check the saved receipt before trying again</h2><p>The Direct Post flow retains TikTok's receipt so Activity can check processing without creating another upload. Processing, an uncertain result and a confirmed outcome remain separate states. This candidate's private publishing test and final result are still pending; an upload or completion message does not guarantee public visibility.</p></div></li>
       </ol>
 
       <section class="block content-grid" aria-label="TikTok access used by MultiPost">
-        <article class="content-card"><p class="eyebrow">TIKTOK ACCESS</p><h2>Only the scopes used by the publishing flow</h2><p>MultiPost uses TikTok Login Kit with <code>user.info.basic</code> to display the current creator account, plus <code>video.upload</code> and <code>video.publish</code> for a video the creator selects and approves.</p></article>
+        <article class="content-card"><p class="eyebrow">REQUESTED TIKTOK ACCESS</p><h2>Creator identity and Direct Post</h2><p>The app requests <code>user.info.basic</code> to identify the connected creator and <code>video.publish</code> for the reviewed Direct Post. <code>FILE_UPLOAD</code> is the file-transfer method within Direct Post. This version does not implement the separate inbox flow associated with <code>video.upload</code>.</p><p>The portal currently includes that additional capability, and an existing grant can contain it. MultiPost records the actual returned grant. Clarification of the corresponding review configuration is still pending.</p></article>
         <article class="content-card"><p class="eyebrow">NOT PART OF THIS FLOW</p><h2>No feed, follower, or message reading</h2><p>The flow does not request the creator's For You feed, follower list, direct messages, or other users' content. Current-account information keeps the publishing decision visible to the creator.</p></article>
       </section>
 
@@ -44,7 +44,7 @@
       </section>
 
       <section class="block notice">
-        <div><p class="eyebrow">CURRENT REVIEW STATUS</p><h2>TikTok production approval is not claimed here.</h2><p>Until TikTok approves Direct Post for production, TikTok limits unaudited clients to private accounts and Only you visibility. The eventual public website, product demo, app configuration, and release behavior must match the approved scope.</p></div>
+        <div><p class="eyebrow">UNAUDITED POSTING LIMITS</p><h2>A private creator and an Only you post.</h2><p>TikTok requires both a private creator account at posting time and <strong>Only you</strong> visibility for unaudited clients. Choosing the audience in MultiPost does not change the TikTok account's privacy. The final test, recording and review remain pending. <a href="https://developers.tiktok.com/docs/en/content-sharing-guidelines">Read TikTok's Content Sharing Guidelines.</a></p></div>
         <a class="button secondary" href="support.html">See support guidance</a>
       </section>
     </main>

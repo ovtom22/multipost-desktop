@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Privacy notice for the MultiPost Windows application, including its Google and YouTube upload connection.">
+  <meta name="description" content="Privacy notice for the MultiPost Windows application, including its Google, YouTube, and TikTok connection data handling.">
   <title>Privacy notice | MultiPost</title>
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -22,11 +22,12 @@
       <section class="page-hero">
         <p class="eyebrow">PRIVACY NOTICE</p>
         <h1>How MultiPost handles connected-platform data.</h1>
-        <p class="lede">Effective date: 18 October 2026. TIGO operates the MultiPost product website and Windows application. This notice explains the data handling for this website and for a supported connection, including the Google and YouTube upload connection.</p>
+        <p class="lede">Effective date: 28 October 2026. TIGO operates the MultiPost product website and Windows application. This notice explains the data handling for this website, the current TikTok Sandbox reviewer connection, and the separate legacy developer builds that include a Google and YouTube connection.</p>
       </section>
 
       <article class="legal">
         <div class="callout"><strong>Contact:</strong> for privacy questions, local-data deletion help, or a request concerning support correspondence, email TIGO at <a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a>.</div>
+        <p aria-label="Privacy section links"><a href="#tiktok-connection">TikTok connection</a> · <a href="#local-storage">Local storage</a> · <a href="#disconnect-delete">Disconnect and deletion</a></p>
 
         <h2>1. Scope</h2>
         <p>This notice applies to MultiPost, its product website, and the data handled by a released or testing build when a creator uses a supported platform connection. Platform availability can differ by build, account eligibility, provider approval, and the creator's selected destination. This notice does not replace the privacy terms of Google, YouTube, or another connected platform.</p>
@@ -42,7 +43,7 @@
         </ul>
 
         <h2>3. Google and YouTube data</h2>
-        <p>When the YouTube connection is available in a MultiPost build and the creator chooses to connect it, MultiPost opens the Google authorization page in the system browser. The creator signs in directly with Google and chooses whether to grant the requested access. MultiPost does not ask for or receive the creator's Google password.</p>
+        <p>The current TikTok reviewer package does not include YouTube. In separate legacy developer builds that include YouTube, MultiPost opens Google's authorization page in the system browser. The creator signs in directly with Google and chooses whether to grant the requested access. MultiPost does not ask for or receive the creator's Google password. The direct Google exchange described here applies to those legacy developer builds; it does not describe an available commercial YouTube release.</p>
         <p>The YouTube connection requests these Google OAuth scopes:</p>
         <ul>
           <li><code>https://www.googleapis.com/auth/youtube.upload</code>, used to upload the creator-selected video and, where selected, its thumbnail.</li>
@@ -50,24 +51,35 @@
         </ul>
         <p>After authorization, MultiPost uses the returned credentials to identify the connected YouTube channel, upload the video chosen by the creator, upload the selected thumbnail, and upload a caption track when the creator selects one. The YouTube upload can include the video's title, description, privacy setting, and any selected captions. Google and YouTube process data sent to their services under their own terms and privacy policies.</p>
 
-        <h2>4. Local storage and credential protection</h2>
-        <p>MultiPost stores its working records in the current Windows user's application-data folder, normally <code>%APPDATA%\MultiPost</code>. The app database keeps local drafts, job history, connected-account records, and the paths to selected files. The selected source video remains on the creator's computer unless the creator directs MultiPost to send it to a connected platform.</p>
-        <p>For the YouTube desktop OAuth connection, access and refresh credentials are stored in the local app database protected with Windows Data Protection API for the current Windows user. The YouTube authorization and token exchange use Google's services directly. The commercial YouTube flow does not send the creator's Google access or refresh credential through a TIGO authorization broker.</p>
+        <h2 id="tiktok-connection">4. TikTok Sandbox connection</h2>
+        <p>When a supported MultiPost build connects to TikTok, sign-in takes place on TikTok's official page. MultiPost does not ask for the creator's TikTok password. The current TikTok reviewer candidate requests <code>user.info.basic</code> to identify the connected creator and <code>video.publish</code> for Direct Post. A TikTok account can have an existing grant that includes additional permission names reported by TikTok, including <code>video.upload</code>. MultiPost records the actual grant returned by TikTok. The current reviewer candidate does not implement TikTok's separate upload-to-inbox or draft-upload feature.</p>
+        <p>TIGO operates the TikTok authorization service at <code>auth.ilgotic.com</code> on a Scaleway server in Warsaw. The service processes the authorization callback, short-lived sign-in state, and token exchange needed to complete sign-in. When the desktop requests a refresh, the service also processes the refresh credential to forward the refresh request to TikTok. The service processes access and refresh credentials during those exchanges, but its application sign-in state table does not retain creator access or refresh credentials. The TikTok developer client secret is held in protected server configuration and is not included in the desktop reviewer package.</p>
+        <p>The service keeps short-lived sign-in records containing the state needed to protect and complete an authorization flow, such as a flow identifier, desktop-provided state and challenge values, a hashed one-time ticket, an authorization code after a successful callback, a fixed denial result when applicable, and an expiry value. Redeemed flow records are removed, and expired flow records are removed by service cleanup while the service is operating. This describes logical record expiry and deletion. It is not a guarantee that every infrastructure, disk, journal, backup, or other copy is physically erased within a fixed time.</p>
+        <p>Routine application access logging is disabled for the authorization service. Hosting, security, and error systems can still process network traffic and connecting IP addresses. TIGO does not currently specify a fixed retention period for those infrastructure records or for support correspondence. To request deletion of support correspondence or information about a particular record, use the contact address above.</p>
 
-        <h2>5. How information is used and shared</h2>
+        <h2 id="local-storage">5. Local storage and credential protection</h2>
+        <p>MultiPost stores its working records in the current Windows user's application-data folder, normally <code>%APPDATA%\MultiPost</code>. The app database keeps local drafts, job history, connected-account records, and the paths to selected files. The selected source video remains on the creator's computer unless the creator directs MultiPost to send it to a connected platform.</p>
+        <p>In legacy developer builds with YouTube, access and refresh credentials are stored in the local app database protected with Windows Data Protection API for the current Windows user. Those builds exchange and refresh credentials directly with Google's services. This is a description of that legacy connection, not a claim that every MultiPost build uses the same authorization architecture. The current TikTok reviewer package has no YouTube connection.</p>
+        <p>For TikTok, the Windows desktop stores connection credentials and protected account metadata in the current Windows user's profile with Windows Data Protection API protection. Display names, connection status, drafts, job history, generated cover frames, and prepared media variants are local working records. The current source does not provide automatic time-based deletion for those local records.</p>
+        <p>The separate TikTok reviewer package uses <code>%LOCALAPPDATA%\MultiPost TikTok Review\appdata\MultiPost</code> instead of the normal <code>%APPDATA%\MultiPost</code> profile. These are different local profiles. The reviewer package does not import the normal personal MultiPost account, draft, or queue data.</p>
+
+        <h2>6. How information is used and shared</h2>
         <p>MultiPost uses the data above to show the selected account, prepare and review a creator-selected post, make the platform request the creator approves, report the platform response, and provide support when contacted. MultiPost does not use YouTube API data to serve advertising or to build an advertising audience.</p>
         <p>When the creator connects or publishes, the relevant information is sent to the selected platform under the creator's direction. For the YouTube connection, this can include Google authorization information and the video, thumbnail, captions, title, description, and publishing settings needed by YouTube. If the creator enables an optional AI writing feature, the text supplied for that feature can be sent to the provider selected for that request.</p>
+        <p>For TikTok Direct Post, MultiPost first retrieves creator information directly from TikTok to show the current creator, permitted audience and interaction choices, and duration limit. After the creator reviews the post and gives consent, the desktop sends the approved caption and settings to TikTok and transfers the selected video directly to TikTok's returned upload address. The TIGO authorization service does not receive the video's bytes in that flow.</p>
         <p>The current product website is static and does not include an analytics script, advertising script, payment form, or visitor-account registration.</p>
 
-        <h2>6. Disconnecting, revocation, and deletion</h2>
-        <p>A creator can disconnect a YouTube account from MultiPost. For a YouTube OAuth connection, MultiPost first attempts to send a revocation request to Google and then clears the local sign-in record. If Google cannot confirm the revocation request, MultiPost still clears the local sign-in record and reports that condition to the creator.</p>
+        <h2 id="disconnect-delete">7. Disconnecting, revocation, and deletion</h2>
+        <p>In legacy developer builds with YouTube, Disconnect clears the local access and refresh credential fields and display name. It does not send a Google revocation request or remove all local account metadata, drafts, history, or cached files. To remove the Google-side authorization, use the connected-app controls in the creator's Google Account. The current TikTok reviewer package does not include this YouTube connection.</p>
+        <p>A TikTok disconnect clears locally stored access and refresh credential fields and the display name from the current MultiPost profile. It can retain local account metadata, drafts, history, cached media, and other local working records. The current TikTok connection does not send a TikTok provider-revocation request. TikTok-side authorization, privacy controls, and posted content must be managed through the creator's TikTok controls.</p>
         <p>To remove local MultiPost data, close the application and remove the <code>%APPDATA%\MultiPost</code> folder. This removes local drafts, history, settings, and stored connection records from that Windows user profile. It does not remove videos, channels, posts, or records held by YouTube or another platform. Those must be managed through the relevant platform account and its privacy controls.</p>
-        <p>To request deletion of support correspondence held by TIGO, email <a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a> from the address used to contact support and describe the request. TIGO does not state a separate server-side retention period for YouTube credentials because the YouTube connection described here stores them locally in the creator's Windows profile.</p>
+        <p>To remove the local TikTok reviewer data, first close the reviewer application, then remove only <code>%LOCALAPPDATA%\MultiPost TikTok Review\appdata\MultiPost</code>. Do not remove the normal personal MultiPost profile when cleaning up the reviewer package. Local deletion does not delete TikTok posts, provider-held records, or the creator's TikTok authorization.</p>
+        <p>To request deletion of support correspondence held by TIGO, email <a href="mailto:ovtom22@gmail.com">ovtom22@gmail.com</a> from the address used to contact support and describe the request. In the legacy developer YouTube connection described here, TIGO does not receive the creator's Google credentials through an authorization server; the credentials are stored in the creator's Windows profile and exchanged directly with Google.</p>
 
-        <h2>7. Security and account responsibility</h2>
+        <h2>8. Security and account responsibility</h2>
         <p>MultiPost is designed to use official provider authorization pages and to protect locally stored connection credentials with the current Windows user's profile protection. No storage or transmission method is completely secure. Creators should protect their Windows account and connected-platform accounts and should not send passwords, access tokens, developer credentials, or local database files to support.</p>
 
-        <h2>8. Google policies and changes</h2>
+        <h2>9. Google policies and changes</h2>
         <p>Google's handling of data is governed by Google's own policies, including the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>. MultiPost may update this notice when the data flow or available features change. The effective date at the top of this page will be updated with the notice.</p>
       </article>
     </main>
