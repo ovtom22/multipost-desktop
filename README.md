@@ -19,9 +19,11 @@ MultiPost builds and the commercial release. The candidate is portable Windows
 x64 build `0.1.0-review.20261026.3`; its real HTTPS broker and connection checks
 are recorded in the application repository. The pages provide a free reviewer
 access request through TIGO support, while making clear that package delivery
-and permitted Sandbox access must be confirmed for each reviewer. The selected
-capability clarification, private test and recording remain pending. No
-unverified package download URL is advertised.
+and permitted Sandbox access must be confirmed for each reviewer. One
+creator-approved Only you test completed on October 28, with its saved receipt
+and private posted result verified. The selected capability clarification,
+end-to-end recording, review submission and TikTok approval remain pending.
+No unverified package download URL is advertised.
 
 The Privacy notice adds TikTok authorization/token processing, direct media
 upload, separate review-profile storage and the limits of Disconnect and local
@@ -52,5 +54,5 @@ It checks local navigation and asset references in the deployable root, confirms
 1. Retain the verified product hostname `multipost.ilgotic.com` and TikTok broker `auth.ilgotic.com`; recheck the exact owned URLs and selected portal revision before submission. Do not change the apex domain as part of this work.
 2. Keep policy wording aligned with actual broker settings, provider processing and support retention. Confirm the public product identity and accessible reviewer build before submission.
 3. Resolve the product-included TikTok capability question and demonstrate free reviewer delivery and permitted Sandbox target-account access.
-4. Complete one consented private test with creator-owned content, retain its receipt and final status, then record the actual flow. A private creator account and manually selected Only you audience are both required for the unaudited test.
+4. Retain the receipt and verified final status from the consented private test completed on October 28, then record the actual flow. A private creator account and manually selected Only you audience remain required for unaudited tests.
 5. Keep commercial release work separate. A signed installer, updates, commerce, media relay and product-session issuer are not prerequisites of TikTok's local-file Direct Post integration merely because they belong to the broader architecture.
