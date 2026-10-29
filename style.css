@@ -150,8 +150,9 @@ nav a:hover, nav a[aria-current="page"] { color: var(--lime); }
   min-height: 650px;
   padding: 5.6rem 0 5rem;
 }
-.hero h1 { max-width: 700px; }
-.hero h1 em { color: var(--lime); font-style: normal; }
+.hero h1 { max-width: 700px; margin-bottom: .45rem; font-size: clamp(3rem, 6vw, 5.7rem); }
+.hero-tagline { max-width: 700px; margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 800; letter-spacing: -.045em; line-height: 1.04; }
+.hero-tagline em { color: var(--lime); font-style: normal; }
 .hero-copy .lede { margin-top: 1.45rem; }
 .platform-note {
   display: flex;
